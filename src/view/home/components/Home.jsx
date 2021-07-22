@@ -12,12 +12,20 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "center center",
     backgroundAttachment: "fixed",
+    [theme.breakpoints.down("sm")]: {
+      height : "100vh", 
+      width : "100%"
+
+    },
   },
   typo: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+    justifyContent : "center",
+    },
   },
 
   name: {
@@ -25,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     fontFamily: "Prompt",
     marginTop: "60px",
+    [theme.breakpoints.down("sm")]: {
+      fontSize : "10px"
+     },
   },
 
   undertitle: {
@@ -32,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     fontFamily: "Prompt",
     fontWeight: "200",
+    [theme.breakpoints.down("sm")]: {
+      fontSize : "10px"
+     },
   },
 
   containButton: {
@@ -61,16 +75,6 @@ function Home(props) {
           Développeuse Web Full Stack Junior
         </Typography>
       </div>
-      {/* <div className={classes.containButton}>
-        <Button className={classes.btn} variant="contained" disableElevation >
-          Voir mon Portfolio
-        </Button>
-        <div className={classes.btn}>
-        <Button className={classes.btn} variant="contained" disableElevation>
-          Voir mon Profil
-        </Button>
-        </div>
-      </div> */}
     </div>
   );
 }

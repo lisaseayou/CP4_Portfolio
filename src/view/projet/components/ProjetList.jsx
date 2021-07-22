@@ -5,12 +5,15 @@ import Typography from "@material-ui/core/Typography";
 import ModalProjet from "../../createProjet/components/ModalProjet";
 import axios from "axios";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   projets: {
     display: "flex",
     justifyContent: "space-around",
     marginTop: "40px",
     marginBottom: "50px",
+    [theme.breakpoints.down("sm")]: {
+      display : "block"
+    }
   },
   title: {
     fontFamily: "Prompt",
@@ -34,7 +37,7 @@ const useStyles = makeStyles({
   ajouter: {
     fontFamily: "Bebas Neue",
   },
-});
+}));
 
 function ProjetList() {
   const classes = useStyles();

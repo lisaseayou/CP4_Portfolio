@@ -8,11 +8,13 @@ import Typography from "@material-ui/core/Typography";
 import CancelIcon from "@material-ui/icons/Cancel";
 import { IconButton } from "@material-ui/core";
 import axios from "axios";
-import { DeleteOutlineOutlined } from "@material-ui/icons";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: 330,
+    [theme.breakpoints.down("sm")]: {
+      width: 200,
+    },
   },
   media: {
     height: 140,
@@ -35,7 +37,7 @@ const useStyles = makeStyles({
     display: "flex",
     marginLeft: "250px",
   },
-});
+}));
 
 export default function ProjetCard({ projet }) {
   const classes = useStyles();
@@ -53,7 +55,7 @@ export default function ProjetCard({ projet }) {
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia className={classes.media} image="/assets/img.png" />
-         
+
         <CardContent>
           <Typography className={classes.title} gutterBottom component="h2">
             {projet.title}
