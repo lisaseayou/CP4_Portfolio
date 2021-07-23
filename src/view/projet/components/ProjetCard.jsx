@@ -39,11 +39,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ProjetCard({ projet }) {
+export default function ProjetCard({ projet}) {
   const classes = useStyles();
 
-  const deleteProjet = (id) => {
-    axios.delete(`http://localhost:3030/projet/${id}`);
+  const deleteProjet = async() => {
+  await
+    axios.delete(`http://localhost:3030/projet/${projet.id}`);
   };
 
   const handleClickDelete = (e) => {
@@ -55,7 +56,7 @@ export default function ProjetCard({ projet }) {
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia className={classes.media} image="/assets/img.png" />
-
+         
         <CardContent>
           <Typography className={classes.title} gutterBottom component="h2">
             {projet.title}
